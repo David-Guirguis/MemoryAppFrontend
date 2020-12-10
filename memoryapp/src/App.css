@@ -1,0 +1,8 @@
+.container {
+    background-image: linear-gradient(to top, #e6eda8, #ffe5bf, #ffe8e6, #fff4ff, #ffffff);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
