@@ -5,7 +5,9 @@ import './App.css'
 import {serverHost, login, userService} from "./properties";
 import { clientID } from "./secrets"
 import './index.css';
+import Card from '@material-ui/core/Card';
 import 'antd/dist/antd.css';
+import Logo from "./assets/MemoryAppLogo.png";
 
 class Login extends React.Component {
 
@@ -48,25 +50,31 @@ class Login extends React.Component {
     render() {
         return (
             <div className="container">
-                        <GoogleLogin
-                        clientId={clientID}
-                        buttonText="Login"
-                        onSuccess={this.loginSuccessful}
-                        onFailure={this.loginFailed}
-                        cookiePolicy={'single_host_origin'}
-                        />
+                <div className="header">
+                    <img className="memoryAppLogo" src={Logo}/>
+                </div>
+                <div className="loginContainer">
+                    <h1 className="connectText">Connect with Google</h1>
+                    <GoogleLogin className="loginButton"
+                    clientId={clientID}
+                    buttonText="Sign in with Google"
+                    onSuccess={this.loginSuccessful}
+                    onFailure={this.loginFailed}
+                    cookiePolicy={'single_host_origin'}
+                    />
+                </div>
                 {this.state &&
-                        <Link
-                            id = "link"
-                            to = {{
-                                pathname: "/Home",
-                                state: {
-                                    googleID: this.state.googleID,
-                                    loginName: this.state.loginName,
-                                    loginImageUrl: this.state.loginImageUrl
-                                }
-                            }}>
-                        </Link>
+                    <Link
+                        id = "link"
+                        to = {{
+                            pathname: "/Home",
+                            state: {
+                                googleID: this.state.googleID,
+                                loginName: this.state.loginName,
+                                loginImageUrl: this.state.loginImageUrl
+                            }
+                        }}>
+                    </Link>
                 }
             </div>
         );

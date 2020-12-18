@@ -6,6 +6,10 @@ export const postMemory = "/postMemory"
 export const getMemories = "/getUserMemories"
 export const deleteMemory = "/deleteMemory"
 export const editMemory = "/editMemory"
+export const gridStyle = {
+    width: "50%",
+    textAlign: "center"
+};
 
 const colors = [
     "magenta",

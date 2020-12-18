@@ -10,15 +10,14 @@ class AddMemoryForm extends Component {
         this.state = {
             visible: false,
         }
-
     }
 
     setVisible = (value) => {
         this.setState({visible: value})
     }
 
-    onCreate = (values) => {
-        this.props.postMemory(values);
+    onCreate = async (values) => {
+        await this.props.postMemory(values);
         this.setVisible(false);
     };
 
@@ -28,7 +27,7 @@ class AddMemoryForm extends Component {
         return (
             <div>
                 <Button
-                    type="primary"
+                    type="primary" ghost
                     onClick={() => {
                         this.setVisible(true);
                     }}

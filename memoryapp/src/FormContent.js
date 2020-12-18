@@ -68,7 +68,6 @@ export const FormContent = ({ visible, onCreate, onCancel }) => {
                 >
                     <Input />
                 </Form.Item>
-
             </Form>
         </Modal>
     );
